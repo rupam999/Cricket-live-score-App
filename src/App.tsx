@@ -1,25 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
+import { DetailScore, MainMatches } from './Screens';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App = () => {
+  return(
+    <Router>
+      <Route exact path="/" render={() => <MainMatches />} />
+      <Route exact path="/live-cricket-scores/:matchID/:matchName" render={() => <DetailScore />} />
+      {/* <Route path="*" render={() => <p>404</p>} /> */}
+    </Router>
   );
 }
 
