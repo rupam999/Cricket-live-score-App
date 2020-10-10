@@ -4,13 +4,13 @@ import { getParticularMatchDetails } from '../api/getParticularMatchDetails';
 
 export const DetailScore = () => {
     const { matchID }: any = useParams();
-    const [matchHeader, setMatchHeader] = useState();
-    const [smallTeamIntro, setTeamIntro] = useState([]);
-    const [currentScore, setCurrentScore] = useState();
-    const [miniScore, setMiniScore] = useState('');
-    const [batsmanStriker, setBatsmanStriker] = useState({});
-    const [batsmanNonStriker, setBatsmanNonStriker] = useState({});
-    const [commentry, setCommentry] = useState();
+    const [matchHeader, setMatchHeader] = useState<any>();
+    const [smallTeamIntro, setTeamIntro] = useState<any>([]);
+    const [currentScore, setCurrentScore] = useState<any>();
+    const [miniScore, setMiniScore] = useState<any>('');
+    const [batsmanStriker, setBatsmanStriker] = useState<any>({});
+    const [batsmanNonStriker, setBatsmanNonStriker] = useState<any>({});
+    const [commentry, setCommentry] = useState<any>();
     
     const getMatchInfo = async () => {
         const res = await getParticularMatchDetails(matchID);
